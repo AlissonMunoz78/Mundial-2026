@@ -1,6 +1,7 @@
 import '../../../../core/network/dio_client.dart';
 import '../models/match_model.dart';
 
+//Llama a GET /competitions/WC/matches?dateFrom=&dateTo=
 abstract class MatchesRemoteDatasource {
   Future<List<MatchModel>> getMatchesByDate(DateTime date);
 }

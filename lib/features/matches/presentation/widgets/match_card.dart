@@ -4,7 +4,7 @@ import '../../domain/entities/match_entity.dart';
 class MatchCard extends StatelessWidget {
   final MatchEntity match;
   final VoidCallback onTap;
-
+//HU -03 VER DETALLE DEL PARTIDO 
   const MatchCard({super.key, required this.match, required this.onTap});
 
   String get _score {

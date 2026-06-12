@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       _matchesFuture = _useCase(_selectedDate);
     });
   }
-
+// HU-02 Filtrar por fecha 
   Future<void> _pickDate() async {
     final picked = await showDatePicker(
       context: context,

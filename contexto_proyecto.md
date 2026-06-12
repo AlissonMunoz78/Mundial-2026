@@ -511,6 +511,7 @@ class DioClient {
 import '../../../../core/network/dio_client.dart';
 import '../models/match_model.dart';
 
+//Llama a GET /competitions/WC/matches?dateFrom=&dateTo=
 abstract class MatchesRemoteDatasource {
   Future<List<MatchModel>> getMatchesByDate(DateTime date);
 }
@@ -523,7 +524,7 @@ class MatchesRemoteDatasourceImpl implements MatchesRemoteDatasource {
         '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
 
     final response = await dio.get(
-      '/competitions/WC2026/matches',
+      '/competitions/WC/matches',
       queryParameters: {
         'dateFrom': dateStr,
         'dateTo': dateStr,
@@ -640,6 +641,7 @@ class MatchEntity {
 📄 ARCHIVO: lib\features\matches\domain\repositories\matches_repository.dart
 ================================================
 
+//HU-01  HU-02
 import '../entities/match_entity.dart';
 
 abstract class MatchesRepository {
@@ -707,7 +709,7 @@ class _HomeScreenState extends State<HomeScreen> {
       _matchesFuture = _useCase(_selectedDate);
     });
   }
-
+// HU-02 Filtrar por fecha 
   Future<void> _pickDate() async {
     final picked = await showDatePicker(
       context: context,
@@ -808,7 +810,7 @@ import '../../domain/entities/match_entity.dart';
 class MatchCard extends StatelessWidget {
   final MatchEntity match;
   final VoidCallback onTap;
-
+//HU -03 VER DETALLE DEL PARTIDO 
   const MatchCard({super.key, required this.match, required this.onTap});
 
   String get _score {
@@ -818,26 +820,67 @@ class MatchCard extends StatelessWidget {
     return 'vs';
   }
 
+  Color _statusColor(BuildContext context) {
+    switch (match.status) {
+      case 'IN_PLAY':
+      case 'PAUSED':
+        return const Color(0xFF00C853);
+      case 'FINISHED':
+        return Colors.white54;
+      default:
+        return const Color(0xFFFFD600);
+    }
+  }
+
+  String _statusLabel() {
+    switch (match.status) {
+      case 'IN_PLAY':
+        return '● EN VIVO';
+      case 'PAUSED':
+        return '● DESCANSO';
+      case 'FINISHED':
+        return 'FINALIZADO';
+      case 'TIMED':
+      case 'SCHEDULED':
+        return 'PROGRAMADO';
+      default:
+        return match.status;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      margin: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
       child: InkWell(
         onTap: onTap,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(16),
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.fromLTRB(16, 12, 16, 14),
           child: Column(
             children: [
-              Text(
-                match.stage.replaceAll('_', ' '),
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-              ),
-              const SizedBox(height: 8),
+              // Fase + estado
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    match.stage.replaceAll('_', ' '),
+                    style: Theme.of(context).textTheme.labelSmall,
+                  ),
+                  Text(
+                    _statusLabel(),
+                    style: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                      color: _statusColor(context),
+                      letterSpacing: 0.8,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 12),
+              // Equipos y marcador
+              Row(
                 children: [
                   Expanded(
                     child: Text(
@@ -847,17 +890,24 @@ class MatchCard extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primaryContainer,
-                      borderRadius: BorderRadius.circular(8),
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFF1B5E20), Color(0xFF2E7D32)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: const Color(0xFF00C853), width: 1),
                     ),
                     child: Text(
                       _score,
-                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        letterSpacing: 2,
+                      ),
                     ),
                   ),
                   Expanded(
@@ -870,10 +920,20 @@ class MatchCard extends StatelessWidget {
                 ],
               ),
               if (match.group != null) ...[
-                const SizedBox(height: 6),
-                Text(
-                  'Grupo: ${match.group}',
-                  style: Theme.of(context).textTheme.bodySmall,
+                const SizedBox(height: 8),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF1E3A5F),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    'Grupo ${match.group!.replaceAll('GROUP_', '')}',
+                    style: const TextStyle(
+                      fontSize: 11,
+                      color: Color(0xFFB0BEC5),
+                    ),
+                  ),
                 ),
               ],
             ],
@@ -1051,7 +1111,6 @@ import '../../domain/usecases/get_match_detail.dart';
 
 class MatchDetailScreen extends StatefulWidget {
   final int matchId;
-
   const MatchDetailScreen({super.key, required this.matchId});
 
   @override
@@ -1071,14 +1130,30 @@ class _MatchDetailScreenState extends State<MatchDetailScreen> {
     _detailFuture = _useCase(widget.matchId);
   }
 
+  String _statusLabel(String status) {
+    switch (status) {
+      case 'IN_PLAY':   return '● EN VIVO';
+      case 'PAUSED':    return '● DESCANSO';
+      case 'FINISHED':  return 'FINALIZADO';
+      case 'TIMED':
+      case 'SCHEDULED': return 'PROGRAMADO';
+      default:          return status;
+    }
+  }
+
+  Color _statusColor(String status) {
+    switch (status) {
+      case 'IN_PLAY':
+      case 'PAUSED':   return const Color(0xFF00C853);
+      case 'FINISHED': return Colors.white54;
+      default:         return const Color(0xFFFFD600);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Detalle del Partido'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('Detalle del Partido')),
       body: FutureBuilder<MatchDetailEntity>(
         future: _detailFuture,
         builder: (context, snapshot) {
@@ -1091,27 +1166,37 @@ class _MatchDetailScreenState extends State<MatchDetailScreen> {
           final match = snapshot.data!;
           final localDate = match.utcDate.toLocal();
           final formattedDate =
-              DateFormat('EEEE d MMM yyyy – HH:mm', 'es').format(localDate);
+              DateFormat("EEEE d MMM yyyy '–' HH:mm", 'es').format(localDate);
           final score = match.homeScore != null && match.awayScore != null
-              ? '${match.homeScore} - ${match.awayScore}'
+              ? '${match.homeScore}  -  ${match.awayScore}'
               : 'vs';
 
           return SingleChildScrollView(
-            padding: const EdgeInsets.all(24),
+            padding: const EdgeInsets.all(20),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                // Encabezado fase + grupo
                 Text(
                   match.stage.replaceAll('_', ' '),
-                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
+                  style: Theme.of(context).textTheme.labelLarge,
                 ),
                 if (match.group != null) ...[
                   const SizedBox(height: 4),
-                  Text('Grupo: ${match.group}'),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF1E3A5F),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Text(
+                      'Grupo ${match.group!.replaceAll('GROUP_', '')}',
+                      style: const TextStyle(fontSize: 12, color: Color(0xFFB0BEC5)),
+                    ),
+                  ),
                 ],
-                const SizedBox(height: 24),
+                const SizedBox(height: 28),
+
+                // Equipos y marcador
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -1123,18 +1208,24 @@ class _MatchDetailScreenState extends State<MatchDetailScreen> {
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 12),
                       decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primaryContainer,
-                        borderRadius: BorderRadius.circular(12),
+                        gradient: const LinearGradient(
+                          colors: [Color(0xFF1B5E20), Color(0xFF2E7D32)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(color: const Color(0xFF00C853), width: 1.5),
                       ),
                       child: Text(
                         score,
-                        style:
-                            Theme.of(context).textTheme.headlineMedium?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                ),
+                        style: const TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          letterSpacing: 2,
+                        ),
                       ),
                     ),
                     Expanded(
@@ -1146,13 +1237,36 @@ class _MatchDetailScreenState extends State<MatchDetailScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 32),
-                _InfoRow(label: 'Estado', value: match.status),
-                _InfoRow(label: 'Fecha y hora', value: formattedDate),
-                if (match.venue != null)
-                  _InfoRow(label: 'Estadio', value: match.venue!),
-                if (match.referee != null)
-                  _InfoRow(label: 'Árbitro', value: match.referee!),
+                const SizedBox(height: 10),
+
+                // Badge de estado
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
+                  decoration: BoxDecoration(
+                    color: _statusColor(match.status).withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: _statusColor(match.status), width: 1),
+                  ),
+                  child: Text(
+                    _statusLabel(match.status),
+                    style: TextStyle(
+                      color: _statusColor(match.status),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 28),
+
+                // Info cards
+                _InfoCard(children: [
+                  _InfoRow(icon: Icons.access_time, label: 'Fecha y hora', value: formattedDate),
+                  if (match.venue != null)
+                    _InfoRow(icon: Icons.stadium, label: 'Estadio', value: match.venue!),
+                  if (match.referee != null)
+                    _InfoRow(icon: Icons.sports, label: 'Árbitro', value: match.referee!),
+                ]),
               ],
             ),
           );
@@ -1162,27 +1276,59 @@ class _MatchDetailScreenState extends State<MatchDetailScreen> {
   }
 }
 
+class _InfoCard extends StatelessWidget {
+  final List<Widget> children;
+  const _InfoCard({required this.children});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: const Color(0xFF132038),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: const Color(0xFF1E3A5F), width: 1),
+      ),
+      child: Column(
+        children: children,
+      ),
+    );
+  }
+}
+
 class _InfoRow extends StatelessWidget {
+  final IconData icon;
   final String label;
   final String value;
-
-  const _InfoRow({required this.label, required this.value});
+  const _InfoRow({required this.icon, required this.label, required this.value});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Icon(icon, size: 18, color: const Color(0xFF00C853)),
+          const SizedBox(width: 10),
           SizedBox(
-            width: 110,
+            width: 100,
             child: Text(
-              '$label:',
-              style: const TextStyle(fontWeight: FontWeight.bold),
+              label,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white70,
+                fontSize: 13,
+              ),
             ),
           ),
-          Expanded(child: Text(value)),
+          Expanded(
+            child: Text(
+              value,
+              style: const TextStyle(color: Colors.white, fontSize: 13),
+            ),
+          ),
         ],
       ),
     );
@@ -1213,11 +1359,48 @@ class MyApp extends StatelessWidget {
       title: 'Mundial 2026',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF0D47A1),
-          brightness: Brightness.dark,
-        ),
         useMaterial3: true,
+        colorScheme: const ColorScheme.dark(
+          primary: Color(0xFF00C853),        // verde césped
+          onPrimary: Colors.black,
+          secondary: Color(0xFFFFD600),      // amarillo tarjeta
+          onSecondary: Colors.black,
+          primaryContainer: Color(0xFF1B5E20), // verde oscuro
+          onPrimaryContainer: Colors.white,
+          surface: Color(0xFF0A1628),        // azul noche FIFA
+          onSurface: Colors.white,
+          error: Color(0xFFE53935),
+        ),
+        scaffoldBackgroundColor: const Color(0xFF0A1628),
+        cardTheme: CardThemeData(
+  color: const Color(0xFF132038),
+  elevation: 4,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(16),
+    side: const BorderSide(color: Color(0xFF1E3A5F), width: 1),
+  ),
+),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFF061022),
+          foregroundColor: Color(0xFF00C853),
+          elevation: 0,
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+            color: Color(0xFF00C853),
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.5,
+          ),
+        ),
+        textTheme: const TextTheme(
+          titleMedium: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+          titleLarge: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          headlineSmall: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          headlineMedium: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          labelSmall: TextStyle(color: Color(0xFF00C853), letterSpacing: 1.2),
+          labelLarge: TextStyle(color: Color(0xFF00C853), letterSpacing: 1.2),
+          bodySmall: TextStyle(color: Color(0xFFB0BEC5)),
+        ),
       ),
       home: const HomeScreen(),
     );
