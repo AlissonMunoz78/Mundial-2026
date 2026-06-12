@@ -68,6 +68,9 @@ Generado automáticamente por export_context_flutter.dart
     📄 local.properties
     📄 mundial_2026_android.iml
     📄 settings.gradle.kts
+📁 assets
+    📁 icon
+        📄 icon.png
 📁 ios
     📄 .gitignore
     📁 Flutter
@@ -94,8 +97,14 @@ Generado automáticamente por export_context_flutter.dart
                 📄 Icon-App-40x40@1x.png
                 📄 Icon-App-40x40@2x.png
                 📄 Icon-App-40x40@3x.png
+                📄 Icon-App-50x50@1x.png
+                📄 Icon-App-50x50@2x.png
+                📄 Icon-App-57x57@1x.png
+                📄 Icon-App-57x57@2x.png
                 📄 Icon-App-60x60@2x.png
                 📄 Icon-App-60x60@3x.png
+                📄 Icon-App-72x72@1x.png
+                📄 Icon-App-72x72@2x.png
                 📄 Icon-App-76x76@1x.png
                 📄 Icon-App-76x76@2x.png
                 📄 Icon-App-83.5x83.5@2x.png
@@ -425,129 +434,7 @@ PACKAGE_CONFIG=.dart_tool/package_config.json
 📄 ARCHIVO: ios\Runner\Assets.xcassets\AppIcon.appiconset\Contents.json
 ================================================
 
-{
-  "images" : [
-    {
-      "size" : "20x20",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-20x20@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "20x20",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-20x20@3x.png",
-      "scale" : "3x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-29x29@1x.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-29x29@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-29x29@3x.png",
-      "scale" : "3x"
-    },
-    {
-      "size" : "40x40",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-40x40@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "40x40",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-40x40@3x.png",
-      "scale" : "3x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-60x60@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-60x60@3x.png",
-      "scale" : "3x"
-    },
-    {
-      "size" : "20x20",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-20x20@1x.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "20x20",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-20x20@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-29x29@1x.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-29x29@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "40x40",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-40x40@1x.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "40x40",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-40x40@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "76x76",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-76x76@1x.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "76x76",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-76x76@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "83.5x83.5",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-83.5x83.5@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "1024x1024",
-      "idiom" : "ios-marketing",
-      "filename" : "Icon-App-1024x1024@1x.png",
-      "scale" : "1x"
-    }
-  ],
-  "info" : {
-    "version" : 1,
-    "author" : "xcode"
-  }
-}
-
+{"images":[{"size":"20x20","idiom":"iphone","filename":"Icon-App-20x20@2x.png","scale":"2x"},{"size":"20x20","idiom":"iphone","filename":"Icon-App-20x20@3x.png","scale":"3x"},{"size":"29x29","idiom":"iphone","filename":"Icon-App-29x29@1x.png","scale":"1x"},{"size":"29x29","idiom":"iphone","filename":"Icon-App-29x29@2x.png","scale":"2x"},{"size":"29x29","idiom":"iphone","filename":"Icon-App-29x29@3x.png","scale":"3x"},{"size":"40x40","idiom":"iphone","filename":"Icon-App-40x40@2x.png","scale":"2x"},{"size":"40x40","idiom":"iphone","filename":"Icon-App-40x40@3x.png","scale":"3x"},{"size":"57x57","idiom":"iphone","filename":"Icon-App-57x57@1x.png","scale":"1x"},{"size":"57x57","idiom":"iphone","filename":"Icon-App-57x57@2x.png","scale":"2x"},{"size":"60x60","idiom":"iphone","filename":"Icon-App-60x60@2x.png","scale":"2x"},{"size":"60x60","idiom":"iphone","filename":"Icon-App-60x60@3x.png","scale":"3x"},{"size":"20x20","idiom":"ipad","filename":"Icon-App-20x20@1x.png","scale":"1x"},{"size":"20x20","idiom":"ipad","filename":"Icon-App-20x20@2x.png","scale":"2x"},{"size":"29x29","idiom":"ipad","filename":"Icon-App-29x29@1x.png","scale":"1x"},{"size":"29x29","idiom":"ipad","filename":"Icon-App-29x29@2x.png","scale":"2x"},{"size":"40x40","idiom":"ipad","filename":"Icon-App-40x40@1x.png","scale":"1x"},{"size":"40x40","idiom":"ipad","filename":"Icon-App-40x40@2x.png","scale":"2x"},{"size":"50x50","idiom":"ipad","filename":"Icon-App-50x50@1x.png","scale":"1x"},{"size":"50x50","idiom":"ipad","filename":"Icon-App-50x50@2x.png","scale":"2x"},{"size":"72x72","idiom":"ipad","filename":"Icon-App-72x72@1x.png","scale":"1x"},{"size":"72x72","idiom":"ipad","filename":"Icon-App-72x72@2x.png","scale":"2x"},{"size":"76x76","idiom":"ipad","filename":"Icon-App-76x76@1x.png","scale":"1x"},{"size":"76x76","idiom":"ipad","filename":"Icon-App-76x76@2x.png","scale":"2x"},{"size":"83.5x83.5","idiom":"ipad","filename":"Icon-App-83.5x83.5@2x.png","scale":"2x"},{"size":"1024x1024","idiom":"ios-marketing","filename":"Icon-App-1024x1024@1x.png","scale":"1x"}],"info":{"version":1,"author":"xcode"}}
 
           
 ================================================
@@ -595,112 +482,712 @@ You can also do it by opening your Flutter project's Xcode project with `open io
 📄 ARCHIVO: lib\core\network\dio_client.dart
 ================================================
 
+import 'package:dio/dio.dart';
 
+class DioClient {
+  static const String _baseUrl = 'https://api.football-data.org/v4';
+  static const String _apiKey = '495a95ccf8104584854676f9392e5139';
+
+  static Dio get instance {
+    final dio = Dio(
+      BaseOptions(
+        baseUrl: _baseUrl,
+        connectTimeout: const Duration(seconds: 10),
+        receiveTimeout: const Duration(seconds: 10),
+        headers: {
+          'X-Auth-Token': _apiKey,
+        },
+      ),
+    );
+    return dio;
+  }
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\matches\data\datasources\matches_remote_datasource.dart
 ================================================
 
+import '../../../../core/network/dio_client.dart';
+import '../models/match_model.dart';
 
+abstract class MatchesRemoteDatasource {
+  Future<List<MatchModel>> getMatchesByDate(DateTime date);
+}
+
+class MatchesRemoteDatasourceImpl implements MatchesRemoteDatasource {
+  @override
+  Future<List<MatchModel>> getMatchesByDate(DateTime date) async {
+    final dio = DioClient.instance;
+    final dateStr =
+        '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
+
+    final response = await dio.get(
+      '/competitions/WC2026/matches',
+      queryParameters: {
+        'dateFrom': dateStr,
+        'dateTo': dateStr,
+      },
+    );
+
+    final matches = response.data['matches'] as List<dynamic>;
+    return matches
+        .map((m) => MatchModel.fromJson(m as Map<String, dynamic>))
+        .toList();
+  }
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\matches\data\models\match_model.dart
 ================================================
 
+import '../../domain/entities/match_entity.dart';
 
+class MatchModel extends MatchEntity {
+  const MatchModel({
+    required super.id,
+    required super.homeTeam,
+    required super.awayTeam,
+    super.homeScore,
+    super.awayScore,
+    required super.status,
+    super.venue,
+    super.group,
+    required super.stage,
+    required super.utcDate,
+  });
+
+  factory MatchModel.fromJson(Map<String, dynamic> json) {
+    final score = json['score'] as Map<String, dynamic>?;
+    final fullTime = score?['fullTime'] as Map<String, dynamic>?;
+    final halfTime = score?['halfTime'] as Map<String, dynamic>?;
+
+    // Usa fullTime si hay marcador, si no halfTime
+    final homeScore = fullTime?['home'] as int? ?? halfTime?['home'] as int?;
+    final awayScore = fullTime?['away'] as int? ?? halfTime?['away'] as int?;
+
+    return MatchModel(
+      id: json['id'] as int,
+      homeTeam: (json['homeTeam'] as Map<String, dynamic>)['shortName'] as String? ??
+          (json['homeTeam'] as Map<String, dynamic>)['name'] as String,
+      awayTeam: (json['awayTeam'] as Map<String, dynamic>)['shortName'] as String? ??
+          (json['awayTeam'] as Map<String, dynamic>)['name'] as String,
+      homeScore: homeScore,
+      awayScore: awayScore,
+      status: json['status'] as String,
+      venue: null, // football-data.org no siempre provee venue en listado
+      group: json['group'] as String?,
+      stage: json['stage'] as String,
+      utcDate: DateTime.parse(json['utcDate'] as String),
+    );
+  }
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\matches\data\repositories\matches_repository_impl.dart
 ================================================
 
+import '../../domain/entities/match_entity.dart';
+import '../../domain/repositories/matches_repository.dart';
+import '../datasources/matches_remote_datasource.dart';
 
+class MatchesRepositoryImpl implements MatchesRepository {
+  final MatchesRemoteDatasource remoteDatasource;
+
+  MatchesRepositoryImpl(this.remoteDatasource);
+
+  @override
+  Future<List<MatchEntity>> getMatchesByDate(DateTime date) async {
+    return await remoteDatasource.getMatchesByDate(date);
+  }
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\matches\domain\entities\match_entity.dart
 ================================================
 
+class MatchEntity {
+  final int id;
+  final String homeTeam;
+  final String awayTeam;
+  final int? homeScore;
+  final int? awayScore;
+  final String status;
+  final String? venue;
+  final String? group;
+  final String stage;
+  final DateTime utcDate;
 
+  const MatchEntity({
+    required this.id,
+    required this.homeTeam,
+    required this.awayTeam,
+    this.homeScore,
+    this.awayScore,
+    required this.status,
+    this.venue,
+    this.group,
+    required this.stage,
+    required this.utcDate,
+  });
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\matches\domain\repositories\matches_repository.dart
 ================================================
 
+import '../entities/match_entity.dart';
 
+abstract class MatchesRepository {
+  Future<List<MatchEntity>> getMatchesByDate(DateTime date);
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\matches\domain\usecases\get_matches_by_date.dart
 ================================================
 
+import '../entities/match_entity.dart';
+import '../repositories/matches_repository.dart';
 
+class GetMatchesByDate {
+  final MatchesRepository repository;
+
+  GetMatchesByDate(this.repository);
+
+  Future<List<MatchEntity>> call(DateTime date) {
+    return repository.getMatchesByDate(date);
+  }
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\matches\presentation\screens\home_screen.dart
 ================================================
 
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import '../../data/datasources/matches_remote_datasource.dart';
+import '../../data/repositories/matches_repository_impl.dart';
+import '../../domain/entities/match_entity.dart';
+import '../../domain/usecases/get_matches_by_date.dart';
+import '../widgets/match_card.dart';
+import '../../../match_detail/presentation/screens/match_detail_screen.dart';
 
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  DateTime _selectedDate = DateTime.now();
+  late Future<List<MatchEntity>> _matchesFuture;
+
+  final _useCase = GetMatchesByDate(
+    MatchesRepositoryImpl(MatchesRemoteDatasourceImpl()),
+  );
+
+  final DateTime _firstDate = DateTime(2026, 6, 11);
+  final DateTime _lastDate = DateTime(2026, 7, 19);
+
+  @override
+  void initState() {
+    super.initState();
+    _loadMatches();
+  }
+
+  void _loadMatches() {
+    setState(() {
+      _matchesFuture = _useCase(_selectedDate);
+    });
+  }
+
+  Future<void> _pickDate() async {
+    final picked = await showDatePicker(
+      context: context,
+      initialDate: _selectedDate.isBefore(_firstDate) ||
+              _selectedDate.isAfter(_lastDate)
+          ? _firstDate
+          : _selectedDate,
+      firstDate: _firstDate,
+      lastDate: _lastDate,
+    );
+    if (picked != null) {
+      _selectedDate = picked;
+      _loadMatches();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Mundial 2026'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.calendar_today),
+            onPressed: _pickDate,
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(12),
+            child: Text(
+              DateFormat('EEEE, d MMMM yyyy', 'es').format(_selectedDate),
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+          ),
+          Expanded(
+            child: FutureBuilder<List<MatchEntity>>(
+              future: _matchesFuture,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+                if (snapshot.hasError) {
+                  return Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Text(
+                        'Error: ${snapshot.error}',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  );
+                }
+                final matches = snapshot.data ?? [];
+                if (matches.isEmpty) {
+                  return const Center(
+                    child: Text('No hay partidos del Mundial en esta fecha'),
+                  );
+                }
+                return ListView.builder(
+                  itemCount: matches.length,
+                  itemBuilder: (context, index) {
+                    final match = matches[index];
+                    return MatchCard(
+                      match: match,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) =>
+                                MatchDetailScreen(matchId: match.id),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\matches\presentation\widgets\match_card.dart
 ================================================
 
+import 'package:flutter/material.dart';
+import '../../domain/entities/match_entity.dart';
 
+class MatchCard extends StatelessWidget {
+  final MatchEntity match;
+  final VoidCallback onTap;
+
+  const MatchCard({super.key, required this.match, required this.onTap});
+
+  String get _score {
+    if (match.homeScore != null && match.awayScore != null) {
+      return '${match.homeScore} - ${match.awayScore}';
+    }
+    return 'vs';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              Text(
+                match.stage.replaceAll('_', ' '),
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+              ),
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Expanded(
+                    child: Text(
+                      match.homeTeam,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                  ),
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.primaryContainer,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      _score,
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      match.awayTeam,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                  ),
+                ],
+              ),
+              if (match.group != null) ...[
+                const SizedBox(height: 6),
+                Text(
+                  'Grupo: ${match.group}',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\match_detail\data\datasources\match_detail_remote_datasource.dart
 ================================================
 
+import '../../../../core/network/dio_client.dart';
+import '../models/match_detail_model.dart';
 
+abstract class MatchDetailRemoteDatasource {
+  Future<MatchDetailModel> getMatchDetail(int matchId);
+}
+
+class MatchDetailRemoteDatasourceImpl implements MatchDetailRemoteDatasource {
+  @override
+  Future<MatchDetailModel> getMatchDetail(int matchId) async {
+    final dio = DioClient.instance;
+    final response = await dio.get('/matches/$matchId');
+    return MatchDetailModel.fromJson(response.data as Map<String, dynamic>);
+  }
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\match_detail\data\models\match_detail_model.dart
 ================================================
 
+import '../../domain/entities/match_detail_entity.dart';
 
+class MatchDetailModel extends MatchDetailEntity {
+  const MatchDetailModel({
+    required super.id,
+    required super.homeTeam,
+    required super.awayTeam,
+    super.homeScore,
+    super.awayScore,
+    required super.status,
+    super.venue,
+    super.group,
+    required super.stage,
+    required super.utcDate,
+    super.referee,
+  });
+
+  factory MatchDetailModel.fromJson(Map<String, dynamic> json) {
+    final score = json['score'] as Map<String, dynamic>?;
+    final fullTime = score?['fullTime'] as Map<String, dynamic>?;
+    final halfTime = score?['halfTime'] as Map<String, dynamic>?;
+    final homeScore = fullTime?['home'] as int? ?? halfTime?['home'] as int?;
+    final awayScore = fullTime?['away'] as int? ?? halfTime?['away'] as int?;
+
+    final refereesList = json['referees'] as List<dynamic>?;
+    final referee = refereesList != null && refereesList.isNotEmpty
+        ? (refereesList.first as Map<String, dynamic>)['name'] as String?
+        : null;
+
+    return MatchDetailModel(
+      id: json['id'] as int,
+      homeTeam: (json['homeTeam'] as Map<String, dynamic>)['name'] as String,
+      awayTeam: (json['awayTeam'] as Map<String, dynamic>)['name'] as String,
+      homeScore: homeScore,
+      awayScore: awayScore,
+      status: json['status'] as String,
+      venue: json['venue'] as String?,
+      group: json['group'] as String?,
+      stage: json['stage'] as String,
+      utcDate: DateTime.parse(json['utcDate'] as String),
+      referee: referee,
+    );
+  }
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\match_detail\data\repositories\match_detail_repository_impl.dart
 ================================================
 
+import '../../domain/entities/match_detail_entity.dart';
+import '../../domain/respositories/match_detail_repository.dart';
+import '../datasources/match_detail_remote_datasource.dart';
 
+class MatchDetailRepositoryImpl implements MatchDetailRepository {
+  final MatchDetailRemoteDatasource remoteDatasource;
+
+  MatchDetailRepositoryImpl(this.remoteDatasource);
+
+  @override
+  Future<MatchDetailEntity> getMatchDetail(int matchId) async {
+    return await remoteDatasource.getMatchDetail(matchId);
+  }
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\match_detail\domain\entities\match_detail_entity.dart
 ================================================
 
+class MatchDetailEntity {
+  final int id;
+  final String homeTeam;
+  final String awayTeam;
+  final int? homeScore;
+  final int? awayScore;
+  final String status;
+  final String? venue;
+  final String? group;
+  final String stage;
+  final DateTime utcDate;
+  final String? referee;
 
+  const MatchDetailEntity({
+    required this.id,
+    required this.homeTeam,
+    required this.awayTeam,
+    this.homeScore,
+    this.awayScore,
+    required this.status,
+    this.venue,
+    this.group,
+    required this.stage,
+    required this.utcDate,
+    this.referee,
+  });
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\match_detail\domain\respositories\match_detail_repository.dart
 ================================================
 
+import '../entities/match_detail_entity.dart';
 
+abstract class MatchDetailRepository {
+  Future<MatchDetailEntity> getMatchDetail(int matchId);
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\match_detail\domain\usecases\get_match_detail.dart
 ================================================
 
+import '../entities/match_detail_entity.dart';
+import '../respositories/match_detail_repository.dart';
 
+class GetMatchDetail {
+  final MatchDetailRepository repository;
+
+  GetMatchDetail(this.repository);
+
+  Future<MatchDetailEntity> call(int matchId) {
+    return repository.getMatchDetail(matchId);
+  }
+}
 
           
 ================================================
 📄 ARCHIVO: lib\features\match_detail\presentation\screens\match_detail_screen.dart
 ================================================
 
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import '../../data/datasources/match_detail_remote_datasource.dart';
+import '../../data/repositories/match_detail_repository_impl.dart';
+import '../../domain/entities/match_detail_entity.dart';
+import '../../domain/usecases/get_match_detail.dart';
 
+class MatchDetailScreen extends StatefulWidget {
+  final int matchId;
+
+  const MatchDetailScreen({super.key, required this.matchId});
+
+  @override
+  State<MatchDetailScreen> createState() => _MatchDetailScreenState();
+}
+
+class _MatchDetailScreenState extends State<MatchDetailScreen> {
+  late Future<MatchDetailEntity> _detailFuture;
+
+  final _useCase = GetMatchDetail(
+    MatchDetailRepositoryImpl(MatchDetailRemoteDatasourceImpl()),
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    _detailFuture = _useCase(widget.matchId);
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Detalle del Partido'),
+        centerTitle: true,
+      ),
+      body: FutureBuilder<MatchDetailEntity>(
+        future: _detailFuture,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          }
+          final match = snapshot.data!;
+          final localDate = match.utcDate.toLocal();
+          final formattedDate =
+              DateFormat('EEEE d MMM yyyy – HH:mm', 'es').format(localDate);
+          final score = match.homeScore != null && match.awayScore != null
+              ? '${match.homeScore} - ${match.awayScore}'
+              : 'vs';
+
+          return SingleChildScrollView(
+            padding: const EdgeInsets.all(24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  match.stage.replaceAll('_', ' '),
+                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                ),
+                if (match.group != null) ...[
+                  const SizedBox(height: 4),
+                  Text('Grupo: ${match.group}'),
+                ],
+                const SizedBox(height: 24),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        match.homeTeam,
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.headlineSmall,
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.primaryContainer,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        score,
+                        style:
+                            Theme.of(context).textTheme.headlineMedium?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(
+                        match.awayTeam,
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.headlineSmall,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 32),
+                _InfoRow(label: 'Estado', value: match.status),
+                _InfoRow(label: 'Fecha y hora', value: formattedDate),
+                if (match.venue != null)
+                  _InfoRow(label: 'Estadio', value: match.venue!),
+                if (match.referee != null)
+                  _InfoRow(label: 'Árbitro', value: match.referee!),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _InfoRow extends StatelessWidget {
+  final String label;
+  final String value;
+
+  const _InfoRow({required this.label, required this.value});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: 110,
+            child: Text(
+              '$label:',
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+          Expanded(child: Text(value)),
+        ],
+      ),
+    );
+  }
+}
 
           
 ================================================
@@ -708,128 +1195,34 @@ You can also do it by opening your Flutter project's Xcode project with `open io
 ================================================
 
 import 'package:flutter/material.dart';
+import 'features/matches/presentation/screens/home_screen.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting('es', null);
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Mundial 2026',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: .center,
-          children: [
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF0D47A1),
+          brightness: Brightness.dark,
         ),
+        useMaterial3: true,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      home: const HomeScreen(),
     );
   }
 }
-
 
           
 ================================================
@@ -837,7 +1230,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ================================================
 
 name: mundial_2026
-description: "A new Flutter project"
+description: "Aplicación de partidos del Mundial 2026"
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -851,15 +1244,25 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   dio: ^5.7.0
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.0
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/icon/
 
           
 ================================================

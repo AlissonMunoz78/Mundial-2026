@@ -1,5 +1,5 @@
 name: mundial_2026
-description: "A new Flutter project"
+description: "Aplicación de partidos del Mundial 2026"
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -13,12 +13,22 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   dio: ^5.7.0
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.0
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/icon/
